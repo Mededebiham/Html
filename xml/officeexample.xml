@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE officeDesk [
+        <!ELEMENT officeDesk (item*)>
+        <!ELEMENT item EMPTY>
+        <!ATTLIST item
+                type CDATA #REQUIRED
+                brand CDATA #REQUIRED
+                model CDATA #REQUIRED
+                price CDATA #REQUIRED>
+        ]>
+<officeDesk>
+    <item type="Laptop" brand="Dell" model="XPS 13" price="1000"/>
+    <item type="Monitor" brand="Samsung" model="Odyssey G7" price="700"/>
+    <item type="Keyboard" brand="Logitech" model="MX Keys" price="100"/>
+    <item type="Mouse" brand="Logitech" model="MX Master 3" price="100"/>
+    <item type="Notebook" brand="Moleskine" model="Classic" price="20"/>
+</officeDesk>

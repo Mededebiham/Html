@@ -1,0 +1,127 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(124,230,100,.5);
+    color: #333;
+    animation:  backgroundChange 10s infinite;
+}
+
+header {
+    background-color:rgba(10,100,98,.3);
+    color: red;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    color: orchid;
+}
+
+section p {
+    color: #555;
+}
+section ul li{
+    color: rgba(125,0,200,1);
+}
+
+section img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.testimonial {
+    background-color: rgba(128,127,127,.5);
+    border-left: 5px solid #333;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.testimonial p {
+    margin: 0;
+}
+
+.testimonial cite {
+    font-style: italic;
+    color: #777;
+}
+
+.rating img {
+    width: 20px;
+    height: auto;
+    margin-bottom: -5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    color: blue;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+.image-container {
+    display: inline-block;
+    margin-right: 1px; /* Abstand zwischen den Bildern */
+}
+image:hover{
+    color: red;
+}
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blink {
+    animation: blink 1s infinite,backgroundChange 2s infinite;
+}
+@keyframes backgroundChange {
+    0% { background-color:rgba(100,100,100,.5); } /* Rot */
+    20% { background-color: rgba(234,255,128,.5); } /* Grün */
+    407% { background-color:rgba(0,12,123,.5); } /* Blau */
+    60% { background-color: #aa72bb12; } /* Rot*/
+    80% { background-color: #0ff30f22; } /* Rot*/
+    100% { background-color: #e4ad92; } /* Rot*/
+}
