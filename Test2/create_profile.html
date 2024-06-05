@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Profile - 🅱rightsbook</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <style>
+        .is-invalid {
+            border-color: red !important;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Create Profile Form -->
+<section id="create-profile" class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-half">
+                <form id="create-profile-form">
+                    <!-- Form fields for creating profile -->
+                    <div class="field">
+                        <label class="label">Name</label>
+                        <div class="control">
+                            <input id="name" class="input" type="text" placeholder="Enter your name" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Age</label>
+                        <div class="control">
+                            <input id="age" class="input" type="number" placeholder="Enter your age" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Gender</label>
+                        <div class="control">
+                            <div class="select">
+                                <select id="gender" required>
+                                    <option value="">Select your gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Location</label>
+                        <div class="control">
+                            <input id="location" class="input" type="text" placeholder="Enter your location" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Profile Picture</label>
+                        <div class="control">
+                            <input id="profile-picture" class="input" type="file" accept="image/*" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Portfolio</label>
+                        <div class="control">
+                            <textarea id="portfolio" class="textarea" placeholder="Enter your portfolio" required></textarea>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">About Me</label>
+                        <div class="control">
+                            <textarea id="about-me" class="textarea" placeholder="Write something about yourself" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submit button -->
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button type="submit" class="button is-primary">Submit</button>
+                        </div>
+                        <div class="control">
+                            <a href="index.html" class="button is-danger">Cancel</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript for form submission and validation -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the form element
+        var form = document.getElementById('create-profile-form');
+
+        // Add submit event listener to the form
+        form.addEventListener('submit', function (event) {
+            // Prevent the form from submitting
+            event.preventDefault();
+
+            // Validate form fields
+            var name = document.getElementById('name');
+            var age = document.getElementById('age');
+            var gender = document.getElementById('gender');
+            var location = document.getElementById('location');
+            var profilePicture = document.getElementById('profile-picture');
+            var portfolio = document.getElementById('portfolio');
+            var aboutMe = document.getElementById('about-me');
+
+            // Check if any required field is empty
+            var fields = [name, age, gender, location, profilePicture, portfolio, aboutMe];
+            var isValid = true;
+            fields.forEach(function (field) {
+                if (!field.value) {
+                    field.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    field.classList.remove('is-invalid');
+                }
+            });
+
+            // If any required field is empty, do not submit the form
+            if (!isValid) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // If all required fields are filled, submit the form
+            // Here you can save the profile data and then redirect to index.html
+            // For demonstration purpose, let's redirect to index.html directly
+            window.location.href = 'index.html';
+        });
+    });
+</script>
+
+</body>
+</html>
