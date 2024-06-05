@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.organigramm {
+    text-align: center;
+    width: 100%;
+}
+
+.organigramm ul {
+    padding-top: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.organigramm ul ul {
+    padding-top: 20px;
+}
+
+.organigramm li {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+}
+
+.organigramm li::before, .organigramm li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 2px solid #ccc;
+    width: 50%;
+    height: 20px;
+}
+
+.organigramm li::after {
+    right: auto;
+    left: 50%;
+    border-left: 2px solid #ccc;
+}
+
+.organigramm li:only-child::after, .organigramm li:only-child::before {
+    display: none;
+}
+
+.organigramm li:only-child {
+    padding-top: 0;
+}
+
+.organigramm li:first-child::before, .organigramm li:last-child::after {
+    border: 0 none;
+}
+
+.organigramm li:last-child::before {
+    border-right: 2px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+}
+
+.organigramm li:first-child::after {
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+}
+
+.organigramm ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid #ccc;
+    width: 0;
+    height: 20px;
+}
+
+.organigramm .person {
+    border: 2px solid #ccc;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.organigramm .person:hover {
+    background-color: #e0e0e0;
+}
